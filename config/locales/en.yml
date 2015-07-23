@@ -18,6 +18,32 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+   models:
+    product: "Proizvod"
+   attributes:
+    product:
+     title: "Ime proizvoda"
+     description: "Opis proizvoda"
+     image_url: "Ime slike proizvoda"
+     price: "Cena proizvoda"
+   errors:
+    models:
+     product:
+      attributes:
+       title:
+         blank: "mora biti uneto"
+       description:
+         blank: "mora biti unet"
+       image_url:
+         blank: "mora biti uneto"
+       price:
+         blank: "mora biti uneta"
+
+
+
+
+
+
+

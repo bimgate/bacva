@@ -66,13 +66,13 @@
 
 /* An entry in the store catalog */
 
-#store  .entry {
+#store .entry {
   overflow: auto;
   margin-top: 1em;
   border-bottom: 1px dotted #77d;
 }
 
-#store  .title {
+#store .title {
   font-size: 120%;
   font-family: sans-serif;
 }
@@ -109,5 +109,130 @@
   color: #44a;
   font-weight: bold;
   margin-right: 2em;
+}
+
+/* MOJ CSS */
+/* MOJ CSS */
+
+#bacva {
+  width: 100%;
+  height:100%;
+  background-color: #896972;
+}
+
+#bacva .entry {
+  overflow: auto;
+  margin-top: 1em;
+  border-bottom: 1px dotted #77d;
+}
+
+#bacva .entry img {
+  width: 80px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  float: left;
+}
+
+#bacva .title {
+  font-size: 120%;
+  font-family: sans-serif;
+}
+
+#bacva #notice {
+        color: #000;
+        border: 2px solid red;
+        padding: 1em;
+        margin-bottom: 2em;
+        background-color: #f0f0f0;
+        font: bold smaller sans-serif;
+}
+
+
+#bacva h1 {
+        font:  150% sans-serif;
+        color: #226;
+        border-bottom: 3px dotted #77d;
+}
+
+#omot {
+  margin: 0 auto;
+  margin-bottom:5px;
+  width: 97%;
+  height: 1200px;
+  background-color:#efcb50;
+  padding-top:5px;    
+}
+
+#meni{
+  margin: 0 auto;
+  width: 99%;
+  height: 40px;
+  background-color:#42df20;
+  padding-top:10px;
+  padding-bottom:
+}
+
+#meni-polja {
+  margin:0;
+  padding:0;
+  margin-left:16%;
+  border-left: dotted;
+  padding-left:40px;  
+}
+
+#meni ul li {
+  display: inline;
+  border-right: dotted; 
+  border-color:black;
+  margin-right:40px;    
+  padding-right:40px;
+}
+
+#meni ul li a {
+  text-decoration:none;
+  text-align: center;   
+}
+
+#baner {
+  margin: 0 auto;
+  width:99%;
+  height:300px;
+  background-color:#f20d35;
+  margin-top:5px;
+  font: small-caps 40px/40px "Times New Roman" , serif;
+}
+
+#baner img {
+  width:230px;
+  height:230px;
+  margin-top:35px;
+  margin-left:40px;
+  float: left;
+}
+
+#centar {
+  margin: 0 auto;
+  width: 99%; 
+}
+
+#centar-levo {
+  width: 30%;
+  height: 840px;
+  float: left;  
+  background-color:#1edce1; 
+}
+
+#centar-desno {
+  width: 69%;
+  height: 840px;
+  float: right; 
+  background-color:#1edce1; 
+}
+
+#futer {
+  margin: 0 auto;
+  width:97%;
+  height:40px;
+  background-color:black; 
 }
 

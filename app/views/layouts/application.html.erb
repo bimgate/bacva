@@ -7,10 +7,44 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id = "bacva">
 
-
-<%= yield %>
+	<div id = "omot">
+		<div id = "meni">
+			<ul id = "meni-polja">
+				<li><a href="#">Pocetna</a></li>
+				<li><a href="#">Poslednje ponude</a></li>
+				<li><a href="#">Specijalna ponuda</a></li>
+				<li><a href="#">Moj Profil</a></li>
+				<li><a href="#">Kontakt</a></li>
+			
+			</ul>
+		</div>
+		<div id = "baner">
+			<%= image_tag "logo1.JPG", data: { src: "logo1.jpg", src_retina: "logo1.jpg" } %>
+			<%= @page_title || "Vasa online pijaca vina i rakije" %>
+			
+		</div>
+			<div id = "centar">
+				<div id = "centar-levo">
+					<ul>
+						<li><a href="#">Vrste crnih vina</a></li>
+						<li><a href="#">Vrste belih vina</a></li>
+						<li><a href="#">Vrste domacih rakija</a></li>
+						<li><a href="#">Vrste vina od kupine</a></li>
+						<li><a href="#">Domaca vina</a></li>
+						<li><a href="#">Strana vina</a></li>
+					</ul>
+				</div>
+				<div id = "centar-desno">
+					<%= yield %>
+				</div>
+					
+			</div>		
+		
+	</div>
+	<div id = "futer"></div>
+	
 
 </body>
 </html>
