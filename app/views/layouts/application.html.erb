@@ -7,7 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body id = "bacva">
+<body id = "prodaja">
 
 	<div id = "omot">
 		<div id = "meni">
@@ -22,8 +22,14 @@
 		</div>
 		<div id = "baner">
 			<%= image_tag "logo1.JPG", data: { src: "logo1.jpg", src_retina: "logo1.jpg" } %>
-			<%= @page_title || "Vasa online pijaca vina i rakije" %>
-			
+			<%= @page_title || "Vasa online pijaca/berza vina i rakije" %>
+
+<span>
+     <% if session[:counter] > 5 %>
+        poseliti ste ovu stranicu <%= pluralize(session[:counter], 'time')  %>
+     <% end %>
+</span> 
+						
 		</div>
 			<div id = "centar">
 				<div id = "centar-levo">
@@ -42,9 +48,15 @@
 					
 			</div>		
 		
+		
+
 	</div>
-	<div id = "futer"></div>
+	<div id = "futer">
+		<h6 style="color: white; margin: 0 auto; text-align: right">Powered by bimgate</h6>
+		<div id="gde_strana"><%= debug(params) if Rails.env.development? %></div>
+	</div>
 	
+
 
 </body>
 </html>
