@@ -221,20 +221,27 @@
   margin: 0 auto;
   width: 99%; 
   margin-top: 10px;
+  padding-bottom: 5px;
+    
 }
 
-#centar-levo {
-  width: 30%;
+#centar #centar-levo {
+  width: 300px;
   height: 840px;
   float: left;  
   background-color:#BB6B00; 
+  
+  
 }
 
-#centar-desno {
-  width: 69%;
+#centar #centar-desno {
+  width: 700px;
   height: 840px;
-  float: right; 
   background-color:#BB6B00; 
+  float: left;
+  margin-left: 11px;
+
+  
 }
 
 #futer {
@@ -242,7 +249,9 @@
   width:97%;
   height:40px;
   background-color:black; 
-  margin-top: 10px;
+  
+  margin-top: 850px;
+  
 }
 
 /* Styles for the cart in the main page */
@@ -263,4 +272,25 @@ border-top: 1px solid #595;
   width: 200px;
   height: 60px;
   margin-bottom: 5px;
+}
+
+#centar #korpa {
+  width: 360px;
+  height: 840px;
+  float: right;
+  border: 1px;
+  background-color: #3B653D;
+  
+}
+
+#cart, #cart table {
+font-size: 20px;
+color: white;
+margin-left: 10px;
+margin-top: 10px
+}
+#cart table {
+border-top: 1px dotted #595;
+border-bottom: 1px dotted #595;
+margin-bottom: 10px;
 }

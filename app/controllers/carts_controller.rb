@@ -9,7 +9,7 @@ class CartsController < ApplicationController
 
   # GET /carts/1
   # GET /carts/1.json
-  def show
+  def show 
   begin
     @cart = Cart.find(params[:id])
   rescue ActiveRecord::RecordNotFound
@@ -31,7 +31,7 @@ end
 
   # GET /carts/1/edit
   def edit
-
+   #@cart = Cart.find(params[:id])
   end
   
   # POST /carts

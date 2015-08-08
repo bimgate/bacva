@@ -4,6 +4,9 @@ class StoreController < ApplicationController
   def index
   	@products = Product.all
   	increment_counter
+
+  	@cart = current_cart
+
   end
 
  def increment_counter

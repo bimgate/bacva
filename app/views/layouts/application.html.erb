@@ -5,6 +5,7 @@
  
   <%= stylesheet_link_tag "bacva.css" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   
   <%= csrf_meta_tags %>
 </head>
 <body id = "prodaja">
@@ -33,6 +34,7 @@
 		</div>
 			<div id = "centar">
 				<div id = "centar-levo">
+				<p><input type="text" name="search">Search</p>
 					<ul>
 						<li><a href="#">Vrste crnih vina</a></li>
 						<li><a href="#">Vrste belih vina</a></li>
@@ -42,20 +44,25 @@
 						<li><a href="#">Strana vina</a></li>
 					</ul>
 				</div>
+				
 				<div id = "centar-desno">
 					<%= yield %>
 				</div>
-					
-			</div>		
-		
-		
+				<div id = "korpa">
+				<div id = "cart">
+					<%= render @cart %> <!-- NISAM IMPLEMENTIRAO CSS ZA PRIKAZ U KORPI -->
+				</div>
+				</div>
 
-	</div>
+			</div>			
+
+	
+	
+</div>
 	<div id = "futer">
 		<h6 style="color: white; margin: 0 auto; text-align: right">Powered by bimgate</h6>
 		<div id="gde_strana"><%= debug(params) if Rails.env.development? %></div>
 	</div>
-	
 
 
 </body>
