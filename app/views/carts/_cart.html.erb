@@ -1,8 +1,10 @@
-<div class="cart_title">Vaša korpa</h2>
+<div class="cart_title">Vaša korpa</div>
 
 <table>
-		<%= render(cart.line_items) %> <!-- PRIKAZUJE SADRZAJ IZ TEMPLATE app/views/line_items/_line_item.html.erb -->
-
+		
+		<%= render(cart.line_items) %>
+		<!-- PRIKAZUJE SADRZAJ IZ TEMPLATE app/views/line_items/_line_item.html.erb -->
+				
 		<tr class="total_line">
 			<td colspan="2">Ukupan iznos</td>
 			<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>

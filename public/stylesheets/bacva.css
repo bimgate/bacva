@@ -173,13 +173,14 @@
   margin: 0 auto;
   width: 99%;
   height: 40px;
-  background-color:#002311;
+  background-color:#3B653D;
   padding-top:10px;
   padding-bottom:
 }
 
+
 #meni-polja {
-  margin:0;
+  margin:0 auto;
   padding:0;
   margin-left:20%;
   border-left: dotted;
@@ -250,7 +251,7 @@
   height:40px;
   background-color:black; 
   
-  margin-top: 850px;
+  margin-top: 10px;
   
 }
 
@@ -274,7 +275,7 @@ border-top: 1px solid #595;
   margin-bottom: 5px;
 }
 
-#centar #korpa {
+#korpa {
   width: 360px;
   height: 840px;
   float: right;
@@ -283,15 +284,33 @@ border-top: 1px solid #595;
   
 }
 
-#cart, #cart table {
+#cart {
+  width: 345px;
+  font-size: 20px;
+  color: white;
+  position: absolute;
+
+}
+
+#cart table {
 font-size: 20px;
 color: white;
 margin-left: 10px;
-margin-top: 10px
+margin-top: 10px;
+
 }
+
 #cart table {
 border-top: 1px dotted #595;
 border-bottom: 1px dotted #595;
 margin-bottom: 10px;
- 
+
+}
+
+#reklama2 {
+  width: 250px;
+  height:200px;
+  background-color:red;
+  position: absolute;
+  
 }

@@ -9,7 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body id = "prodaja">
-
+    
 	<div id = "omot">
 		<div id = "meni">
 			<ul id = "meni-polja">
@@ -27,7 +27,7 @@
 
 <span>
      <% if session[:counter] > 5 %>
-        poseliti ste ovu stranicu <%= pluralize(session[:counter], 'time')  %>
+        poseliti ste ovu stranicu <%= pluralize(session[:counter], 'puta')  %>
      <% end %>
 </span> 
 						
@@ -49,10 +49,16 @@
 					<%= yield %>
 				</div>
 				<div id = "korpa">
-				<div id = "cart">
-					<%= render @cart %> <!-- NISAM IMPLEMENTIRAO CSS ZA PRIKAZ U KORPI -->
+					<div id = "cart">
+						<%= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
+							<%= render @cart %>
+						<% end %>
+					</div>
+
 				</div>
-				</div>
+				<!-- <div id="reklama2">
+					<p>testete test dyede dedede deded dede dede</p>
+				</div> -->
 
 			</div>			
 

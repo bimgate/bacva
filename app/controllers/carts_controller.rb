@@ -73,7 +73,9 @@ end
 
     respond_to do |format|
       format.html { redirect_to store_url, notice: 'Vasa Korpa je trenutno prazna.' }
-      format.json { head :ok }
+      format.js
+      #format.json { head :ok }
+      format.json { render action: 'show', status: :created, location: @cart }
     end
   end
 
