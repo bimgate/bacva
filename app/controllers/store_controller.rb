@@ -2,7 +2,9 @@ class StoreController < ApplicationController
   #helper_method :increment_counter
 
   def index
-  	@products = Product.all
+    @products = Product.paginate(page: params[:page],per_page: 3)
+
+  	#@products = Product.all
   	increment_counter
 
   	@cart = current_cart

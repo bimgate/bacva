@@ -4,16 +4,19 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    @cart = current_cart
     @products = Product.all
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @cart = current_cart
   end
 
   # GET /products/new
   def new
+    @cart = current_cart
     @product = Product.new
   end
 
@@ -24,6 +27,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    @cart = current_cart
     @product = Product.new(product_params)
 
     respond_to do |format|
