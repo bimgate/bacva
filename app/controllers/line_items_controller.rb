@@ -44,6 +44,7 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
+    #order = Order.find(order_params)
     @line_item = @cart.add_product(product.id)
 
     respond_to do |format|
