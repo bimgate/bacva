@@ -20,9 +20,16 @@ test: &test
   <<: *default
   database: db/test.sqlite3
 
+#production:
+ # <<: *default
+  #database: db/production.sqlite3
+
+#OVO SAM DODAO
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: db/production.sqlite3
+#OVO SAM DODAO
 
 cucumber:
   <<: *test
