@@ -7,7 +7,7 @@
 				
 		<tr class="total_line">
 			<td colspan="2">Ukupan iznos</td>
-			<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+			<td class="total_cell"><%= sprintf("din%0.02f", cart.total_price) %></td> <!--<%= number_to_currency(cart.total_price) %> -->
 		</tr>
 </table>
 

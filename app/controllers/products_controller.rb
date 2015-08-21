@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @cart = current_cart
   end
 
   # POST /products

@@ -175,7 +175,7 @@
   height: 40px;
   background-color:#3B653D;
   padding-top:10px;
-  padding-bottom:
+  padding-bottom:0;
 }
 
 
@@ -345,3 +345,15 @@ margin-left: 4em;
 .depot_form div {
 margin: 0.5em 0;
 }
+
+/* will_paginate dizajn */
+.bottle_paginate {
+  width: 350px;
+  height: 150px;
+  color: red;
+  
+  padding: 0 auto;
+  margin: 0 auto;
+
+
+

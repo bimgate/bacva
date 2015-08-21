@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+<p id ="notice"><%= notice %></p>
+<% end %>
 
 <h1>Listing Orders</h1>
 
@@ -9,7 +11,7 @@
       <th>Address</th>
       <th>Email</th>
       <th>Pay type</th>
-      <th colspan="3"></th>
+      <th colspan="3"></th>ć
     </tr>
   </thead>
 
@@ -28,7 +30,7 @@
   </tbody>
 </table>
 
-<br>
+
 
 <%= link_to 'New Order', new_order_path %>
-<p><%= will_paginate @orders %></p>
+<p><%= will_paginate @orders, :previous_label => 'Prethodna', :next_label => 'Sledeća' %></p>

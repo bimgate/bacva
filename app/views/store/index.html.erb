@@ -11,7 +11,8 @@
     <h3><%= product.title %></h3>   
     <%=sanitize product.description %>
     <div class ="price_line">
-      <span class="price"><%= number_to_currency(product.price) %></span>
+    <span class="price"><%= sprintf("RSD%0.02f", product.price) %></span>
+      <!--<span class="price"><%= number_to_currency(product.price) %></span>-->
       <%= button_to 'Dodaj u korpu', line_items_path(:product_id => product), method: 'post', :remote => true %> <!-- AJAX POZIV-->   
 
 
@@ -20,4 +21,9 @@
   </div>
 
   <% end %>
-   <p><%= will_paginate @products %></p>
+
+  <div class="bottle_paginate">
+  
+  <%= will_paginate @products, :previous_label => "Prethodna", :next_label => "Sledeca" %>
+  
+  </div>

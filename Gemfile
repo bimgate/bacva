@@ -39,12 +39,18 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :test do
+
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+end
 
 
-group :development, :test do
+group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'sqlite3'
   gem 'byebug'
+
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
