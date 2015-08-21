@@ -18,7 +18,7 @@ development:
 # Do not set this db to the same as development or production.
 test: &test
   <<: *default
-  database: shielded-basin-4726
+  database: db/test.sqlite3
 
 #production:
  # <<: *default
@@ -28,7 +28,7 @@ test: &test
 production:
   adapter: postgresql
   encoding: unicode
-  database: db/production.sqlite3
+  database: shielded-basin-4726
 #OVO SAM DODAO
 
 cucumber:
