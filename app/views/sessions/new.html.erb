@@ -1,0 +1,29 @@
+<div class="depot_form" >
+<% if flash[:alert] %>
+<%= flash[:alert] %>
+<% end %> 
+
+<%= form_tag do %>
+
+<fieldset>
+
+<legend>Pristupite svom nalogu</legend>
+
+<div>
+<label for="name" >Ime:</label>
+	<%= text_field_tag :name, params[:name] %>
+</div>
+
+<div>
+<label for="password" >Lozinka:</label>
+	<%= password_field_tag :password, params[:password] %>
+</div>
+
+<div>
+	<%= submit_tag "Posalji" %>
+</div>
+
+</fieldset>
+
+<% end %>
+</div>

@@ -15,10 +15,10 @@
 			<ul id = "meni-polja">
 				<li><a href="#">Pocetna</a></li>
 				<li><a href="#">Poslednje ponude</a></li>
-				<li><a href="#">Specijalna ponuda</a></li>
+				<li><a href="#">Specijalna ponuda</a></li>				
 				<li><a href="#">Moj Profil</a></li>
 				<li><a href="#">Kontakt</a></li>
-			
+				<li><a href="#">Ulaz</a></li>			
 			</ul>
 		</div>
 		<div id = "baner">
@@ -34,7 +34,18 @@
 		</div>
 			<div id = "centar">
 				<div id = "centar-levo">
-				<p><input type="text" name="search">Search</p>
+
+				<div id="search">
+
+				 <%= form_tag(products_path, :method => "get") do %>
+
+				<%= text_field_tag :search, params[:search], class: "span2", placeholder: "Pretrazi proizvode" %>
+
+				<%= button_to 'Pretrazi' %>
+				<% end %>
+
+				</div>
+
 					<ul>
 						<li><a href="#">Vrste crnih vina</a></li>
 						<li><a href="#">Vrste belih vina</a></li>
@@ -50,17 +61,33 @@
 				</div>
 				<div id = "korpa">
 					<div id = "cart">
-						<%= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
+						<%= hidden_div_if(@cart.line_items.empty?, id: "cart" ) do %>
 							<%= render @cart %>
 						<% end %>
 					</div>
 
-				</div>
-				<!-- <div id="reklama2">
-					<p>testete test dyede dedede deded dede dede</p>
-				</div> -->
+					<div id="admin_panel">
+					
+					<% if session[:user_id] %>
+					<br />
+					<%= link_to 'Orders' , orders_path %><br />
+					<%= link_to 'Products' , products_path %><br />
+					<%= link_to 'Users' , users_path %><br />
+					<br />
+					<%= button_to 'Logout' , logout_path, :method => :delete %>
+					<% else %>
+					<div id="reklama2">
+					<p>Vas sadrzak korpe bla bla bla. Mozete da porucite bla bla bla, itd.</p>
+					</div>
+					<% end %>
+						
+					</div>
 
-			</div>			
+				</div>	
+
+
+			</div>	
+
 
 	
 	

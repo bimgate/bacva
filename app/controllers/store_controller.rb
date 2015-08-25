@@ -1,6 +1,7 @@
 class StoreController < ApplicationController
   #helper_method :increment_counter
-
+  skip_before_filter :authorize
+  
   def index
     @products = Product.paginate(page: params[:page],per_page: 3)
 

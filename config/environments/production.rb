@@ -24,9 +24,9 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
 
   #PROMENJENO ZA HEROKU
-  #config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  config.serve_static_files = true
+  #config.serve_static_files = true
 
   #PROMENJENO ZA HEROKU
 

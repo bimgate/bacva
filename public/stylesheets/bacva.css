@@ -182,9 +182,9 @@
 #meni-polja {
   margin:0 auto;
   padding:0;
-  margin-left:20%;
+  margin-left:12%;
   border-left: dotted;
-  padding-left:40px;  
+  padding-left:10px;  
 }
 
 #meni ul li {
@@ -235,6 +235,19 @@
   
 }
 
+#centar-levo #search {
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 0;
+}
+
+#search_button {
+
+  width: 15px;
+  height: 15px;
+  background-color: red;
+}
+
 #centar #centar-desno {
   width: 700px;
   height: 840px;
@@ -281,6 +294,8 @@ border-top: 1px solid #595;
   float: right;
   border: 1px;
   background-color: #3B653D;
+  margin: 0 auto;
+  
   
 }
 
@@ -288,8 +303,7 @@ border-top: 1px solid #595;
   width: 345px;
   font-size: 20px;
   color: white;
-  position: absolute;
-
+  margin: 0 auto;
 }
 
 #cart table {
@@ -297,7 +311,6 @@ font-size: 20px;
 color: white;
 margin-left: 10px;
 margin-top: 10px;
-
 }
 
 #cart table {
@@ -307,12 +320,21 @@ margin-bottom: 10px;
 
 }
 
-#reklama2 {
-  width: 250px;
+#admin_panel {
+  width: 320px;
   height:200px;
-  background-color:red;
-  position: absolute;
+  background-color:red; 
+  margin: 0 auto; 
+  margin-top: 30px;
   
+  padding: 0;
+  position: relative;
+  padding: 5px;
+  
+}
+
+#reklama2 {
+   margin-top: 35px;
 }
 
 /* Styles for order form */
@@ -355,5 +377,5 @@ margin: 0.5em 0;
   padding: 0 auto;
   margin: 0 auto;
 
-
+}
 
