@@ -1,0 +1,122 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "compass";
+
+// Needs latest Compass, add '@import "compass"' to your scss
+// Permalink - use to edit and share this gradient:
+// http://colorzilla.com/gradient-editor/#f0b7a1+0,8c3310+99,8c3310+99,8c3310+99
+
+
+
+
+
+#leva_kolona{
+ background-color: #0D0000;
+ height: 1000px;
+ padding-top: 40px;
+
+}
+ 
+
+#centar{
+
+    border-left: 30px solid #1D0404;
+    border-right: 30px solid #1D0404;
+	border-top: 40px solid #0D0000; 
+
+	background-color: #030000;
+	padding: 0px;
+	
+
+
+}
+
+#desna_kolona{
+ background-color: #0D0000;
+ height: 1000px;
+ padding-top: 20px;
+}
+
+
+#centriraj_kontejner{
+	margin: 0 auto;
+
+}
+
+#centriraj_red {
+	margin: 0 auto;
+}
+
+
+ .jumbotron {
+ margin: 0 auto;
+ margin-bottom: 0px;
+ margin-top: 0px;
+ width: 960px;
+ height: 580px;
+ background: url('/images/vinograd7.JPG');
+ }
+
+ body{
+
+ @include filter-gradient(#f0b7a1, #bf6e4e, horizontal); // IE6-9
+@include background-image(linear-gradient(left,  #f0b7a1 0%,#60150b 34%,#752201 49%,#bf6e4e 100%));
+
+
+ }
+
+ #meni{
+ margin-bottom: 0px;
+ background-color: #5E0E03;
+ border-color: #5E0E03;
+ 
+ }
+
+ #meni a {
+ color: white;
+ }
+
+ #cart_line_item_total_price{
+	font-size: 18px;
+	color: white;
+}
+
+ a {
+ color: white;
+ }
+
+ p{
+ color: white;
+ }
+
+ h3{
+ color: white;
+ }
+
+  h1{
+ color: white;
+ }
+
+ 
+
+ .line_item{
+ font-size: 16px;
+ color: white;
+ }
+
+.form-group{
+	color: white;
+}
+
+#metod_placanja{
+	color: black;
+}
+
+legend{
+	color: white;
+}
+
+.price{
+	color: white;
+}

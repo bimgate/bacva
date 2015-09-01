@@ -3,27 +3,40 @@
 <% end %>
 
 
-<h1>Katalog ponude</h1> 
 
+
+
+<div class="row">
+
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-12 text-center">
+<h1>Katalog ponude</h1>
 <% @products.each do |product| %>
-  <div class="entry">
-    <%= image_tag(product.image_url) %>
+
+<div class="col-lg-6">
+    <%= image_tag(product.image_url, class: "img-responsive", class: "img-rounded") %>
+    
     <h3><%= product.title %></h3>   
-    <%=sanitize product.description %>
-    <div class ="price_line">
+    <p class="lead"><%=sanitize product.description %></p>
+    
     <span class="price"><%= sprintf("RSD%0.02f", product.price) %></span>
       <!--<span class="price"><%= number_to_currency(product.price) %></span>-->
-      <%= button_to 'Dodaj u korpu', line_items_path(:product_id => product), method: 'post', :remote => true %> <!-- AJAX POZIV-->   
-
-
-    </div> 
-
-  </div>
-
+      <%= button_to 'Dodaj u korpu', line_items_path(:product_id => product), class: "btn btn-primary btn-sm", method: 'post', :remote => true %> <!-- AJAX POZIV-->   <br/>
+   </div>      
   <% end %>
-
-  <div class="bottle_paginate">
-  
-  <%= will_paginate @products, :previous_label => "Prethodna", :next_label => "Sledeca" %>
   
   </div>
+
+  <div class="pagination">
+  <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+</div>
+  
+  
+  </div>
+
+  
+  
+
+ 
+  
+  
+  

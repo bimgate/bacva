@@ -1,29 +1,30 @@
-<div class="depot_form" >
+<div class = "form-horizontal center">
 <% if flash[:alert] %>
 <%= flash[:alert] %>
 <% end %> 
 
 <%= form_tag do %>
 
-<fieldset>
-
 <legend>Pristupite svom nalogu</legend>
 
-<div>
-<label for="name" >Ime:</label>
-	<%= text_field_tag :name, params[:name] %>
+<div class="form-group">
+<label for="name" class="col-sm-4 control-label">Ime:</label>
+<div class="col-sm-3">	
+	<%= text_field_tag :name, params[:name], class: "form-control" %>
+</div>
 </div>
 
-<div>
-<label for="password" >Lozinka:</label>
-	<%= password_field_tag :password, params[:password] %>
+<div class="form-group">
+<label for="password" class="col-sm-4 control-label">Lozinka:</label>
+<div class="col-sm-3">
+	<%= password_field_tag :password, params[:password], class: "form-control" %>
+</div>
+</div>
+<div class="form-group">
+	 <%= submit_tag "Posalji", class: "btn btn-default btn-primary" %>
 </div>
 
-<div>
-	<%= submit_tag "Posalji" %>
-</div>
 
-</fieldset>
 
 <% end %>
 </div>

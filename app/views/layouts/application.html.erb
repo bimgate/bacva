@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
   <title>Bacva</title>
  
-  <%= stylesheet_link_tag "bacva.css" %>
+ <%= stylesheet_link_tag "application" %>
+ 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
    
   <%= csrf_meta_tags %>
 </head>
-<body id = "prodaja">
-    
-	<div id = "omot">
-		<div id = "meni">
-			<ul id = "meni-polja">
-				<li><a href="#">Pocetna</a></li>
-				<li><a href="#">Poslednje ponude</a></li>
-				<li><a href="#">Specijalna ponuda</a></li>				
-				<li><a href="#">Moj Profil</a></li>
-				<li><a href="#">Kontakt</a></li>
-				<li><a href="#">Ulaz</a></li>			
-			</ul>
-		</div>
-		<div id = "baner">
-			<%= image_tag "logo1.JPG", data: { src: "logo1.jpg", src_retina: "logo1.jpg" } %>
-			<%= @page_title || "Vasa online pijaca/berza vina i rakije" %>
+<body>    		
+
+	<div class="container">
+		<div class="jumbotron">
+		
+		
+			
+			<!--<%= @page_title %>-->
 
 <span>
      <% if session[:counter] > 5 %>
-        poseliti ste ovu stranicu <%= pluralize(session[:counter], 'puta')  %>
+        posetili ste ovu stranicu <%= pluralize(session[:counter], 'puta')  %>
      <% end %>
 </span> 
 						
+		 
 		</div>
-			<div id = "centar">
-				<div id = "centar-levo">
+		</div>
+
+		<div class="navbar navbar-default" id="meni">
+<div class="container-fluid">
+
+<ul class="nav navbar-nav navbar">
+				<li><a href="<%= store_path %>">Pocetna</a></li>
+				<li><a href="#">Najnoviji proizvodi</a></li>
+				<li><a href="#">Specijalna ponuda</a></li>				
+				<li><a href="#">Moj Profil</a></li>
+				<li><a href="#">Kontakt</a></li>
+				<li><a href="<%= admin_path %>">Ulaz</a></li>			
+			</ul>
+</div>
+</div>
+
+			
+
+<div id = "container" id="centriraj_kontejner">
+	<div class="row" id="centriraj_red">
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 text-center" id="leva_kolona" >
 
 				<div id="search">
 
@@ -45,7 +60,7 @@
 				<% end %>
 
 				</div>
-
+				<div class="sidebar">
 					<ul>
 						<li><a href="#">Vrste crnih vina</a></li>
 						<li><a href="#">Vrste belih vina</a></li>
@@ -54,12 +69,23 @@
 						<li><a href="#">Domaca vina</a></li>
 						<li><a href="#">Strana vina</a></li>
 					</ul>
+					</div>
 				</div>
+			
+			
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-6 text-center" id="centar">
 				
-				<div id = "centar-desno">
+				
 					<%= yield %>
-				</div>
-				<div id = "korpa">
+					
+				
+				</div>			
+				
+				
+
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 text-center" id="desna_kolona">
+
+				
 					<div id = "cart">
 						<%= hidden_div_if(@cart.line_items.empty?, id: "cart" ) do %>
 							<%= render @cart %>
@@ -70,28 +96,33 @@
 					
 					<% if session[:user_id] %>
 					<br />
-					<%= link_to 'Orders' , orders_path %><br />
-					<%= link_to 'Products' , products_path %><br />
-					<%= link_to 'Users' , users_path %><br />
+					<%= link_to 'Porudzbine' , orders_path %><br />
+					<%= link_to 'Proizvodi' , products_path %><br />
+					<%= link_to 'Korisnici' , users_path %><br />
 					<br />
-					<%= button_to 'Logout' , logout_path, :method => :delete %>
+					<%= button_to 'Izadji' , logout_path, :method => :delete %>
 					<% else %>
 					<div id="reklama2">
 					<p>Vas sadrzak korpe bla bla bla. Mozete da porucite bla bla bla, itd.</p>
 					</div>
 					<% end %>
-						
+										
 					</div>
-
-				</div>	
-
-
-			</div>	
-
-
-	
-	
+				</div>
+			</div>
 </div>
+
+
+
+				
+
+
+				
+
+
+	
+	
+
 	<div id = "futer">
 		<h6 style="color: white; margin: 0 auto; text-align: right">Powered by bimgate</h6>
 		<div id="gde_strana"><%= debug(params) if Rails.env.development? %></div>

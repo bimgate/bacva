@@ -1,12 +1,14 @@
 <% if line_item == @current_item %>
+
 <tr id="current_item">
 <% else %>
-<tr>
+<tr >
 <% end %>
-<td> <%= line_item.quantity %>&times; </td>
-<td> <%= line_item.product.title %> </td>
- <td class= "item_price" ><%= sprintf("din%0.02f", line_item.total_price) %>  </td> <!-- <%= number_to_currency(line_item.total_price) %> -->
+<td class="line_item"> <%= line_item.quantity %>&times; </td>
+<td class="line_item"> <%= line_item.product.title %> </td>
+ <td class="line_item"><%= sprintf("din %0.02f", line_item.total_price) %> &nbsp; </td> <!-- <%= number_to_currency(line_item.total_price) %> -->
  <td><%= button_to '-', line_item_path(line_item.product.id), method: 'put',
   :remote => true %></td> <!-- SMANJUJE KOLICINU ZA 1 -->
  </tr>
  </tr>
+

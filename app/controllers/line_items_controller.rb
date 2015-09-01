@@ -1,8 +1,10 @@
 class LineItemsController < ApplicationController
-skip_before_filter :authorize, :only => :create  
+skip_before_filter :authorize, :only => [:create, :update]  
   # GET /line_items
   # GET /line_items.xml
   def index
+    @cart = current_cart
+
     @line_items = LineItem.all
 
     respond_to do |format|
@@ -14,6 +16,8 @@ skip_before_filter :authorize, :only => :create
   # GET /line_items/1
   # GET /line_items/1.xml
   def show
+    @cart = current_cart
+
     @line_item = LineItem.find(params[:id])
 
     respond_to do |format|
@@ -35,6 +39,7 @@ skip_before_filter :authorize, :only => :create
 
   # GET /line_items/1/edit
   def edit
+    @cart = current_cart
     @line_item = LineItem.find(params[:id])
   end
 

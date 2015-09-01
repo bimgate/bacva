@@ -1,4 +1,5 @@
-<%= form_for(@order) do |f| %>
+
+<%= form_for @order, :html => {:class => "form-horizontal center"} do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -11,26 +12,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, :size => 40 %>
+  <div class="form-group">  
+    <%= f.label :name, "Ime:", class: "col-md-2 control-label" %><br>
+    <div class="col-md-8">
+    <%= f.text_field :name, class: "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address, :rows => 3, :cols => 40 %>
+
+  <div class="form-group">
+    <%= f.label :address, "Adresa:", class: "col-md-2 control-label" %><br>
+    <div class="col-md-8">
+    <%= f.text_area :address, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.email_field :email, :size => 40 %>
   </div>
-  <div class="field">
-    <%= f.label :pay_type %><br>
+
+  <div class="form-group">
+    <%= f.label :email, "Email:", class: "col-sm-2 control-label" %><br>
+    <div class="col-sm-8">
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :pay_type, "Metod placanja:", class: "col-sm-3 control-label" %><br>
+    <div class="col-sm-6" id="metod_placanja">
     <%= f.select :pay_type, Order::PAYMENT_TYPES,
                     :prompt => 'Metod placanja' %>
   </div>
-  
-  <div class="actions">
-    <%= f.submit 'Posaljite porudzbinu' %>
-
   </div>
+  
+  <%= f.submit "Posaljite porudzbinu", class: "btn btn-default btn-primary" %>
+  
 <% end %>
