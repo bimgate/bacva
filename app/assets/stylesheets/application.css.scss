@@ -20,7 +20,7 @@
  
 
 #centar{
-
+		
     border-left: 30px solid #1D0404;
     border-right: 30px solid #1D0404;
 	border-top: 40px solid #0D0000; 
@@ -74,7 +74,9 @@
  }
 
  #meni a {
- color: white;
+ text-shadow: 0px 0 15px white;
+	
+	font-weight: bold;
  }
 
  #cart_line_item_total_price{
@@ -119,4 +121,62 @@ legend{
 
 .price{
 	color: white;
+}
+
+
+
+.dropdown-menu {
+	background-color: #5E0E03;    
+    background-image: none;
+    color: white;
+	
+}
+
+.dropdown:hover>.dropdown-menu {
+    display:block;
+}
+
+.dropdown li a {
+	color: white;
+}
+
+
+.dropdown-submenu>.dropdown-menu {
+    top:0;
+    left:100%;
+    margin-top:0px;
+    margin-left:-1px;
+    -webkit-border-radius:0 6px 6px 6px;
+    -moz-border-radius:0 6px 6px 6px;
+    border-radius:0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+    display:block;
+}
+.dropdown-submenu>a:after {
+    display:block;
+    content:" ";
+    float:right;
+    width:0;
+    height:200;
+    border-color:transparent;
+    border-style:solid;
+    border-width:5px 0 5px 5px;
+    border-left-color:#cccccc;
+    margin-top:5px;
+    margin-right:-10px;
+}
+.dropdown-submenu:hover>a:after {
+    border-left-color:#ffffff;
+}
+.dropdown-submenu.pull-left {
+    float:none;
+
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left:-100%;
+    margin-left:10px;        
+    -webkit-border-radius:6px 0 6px 6px;
+    -moz-border-radius:6px 0 6px 6px;
+    border-radius:6px 0 6px 6px;
 }

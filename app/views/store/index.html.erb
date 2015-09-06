@@ -18,7 +18,7 @@
     <h3><%= product.title %></h3>   
     <p class="lead"><%=sanitize product.description %></p>
     
-    <span class="price"><%= sprintf("RSD%0.02f", product.price) %></span>
+    <span class="price"><%= sprintf("din% 0.02f", product.price) %></span>
       <!--<span class="price"><%= number_to_currency(product.price) %></span>-->
       <%= button_to 'Dodaj u korpu', line_items_path(:product_id => product), class: "btn btn-primary btn-sm", method: 'post', :remote => true %> <!-- AJAX POZIV-->   <br/>
    </div>      

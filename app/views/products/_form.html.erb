@@ -11,23 +11,46 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+<div class="form-group">  
+    <%= f.label :title, "Ime:", class: "col-md-4 control-label" %><br>
+    <div class="col-md-8">
+    <%= f.text_field :title, class: "form-control" %>
+    </div>
+</div>
+
+<div class="form-group">  
+    <%= f.label :description, "Opis:", class: "col-md-4 control-label" %><br>
+    <div class="col-md-8">
+    <%= f.text_field :description, class: "form-control" %>
+    </div>
+</div>
+
+<div class="form-group">  
+    <%= f.label :image_url, "Slika:", class: "col-md-4 control-label" %><br>
+    <div class="col-md-8">
+    <%= f.text_field :image_url, class: "form-control" %>
+    </div>
+</div>
+  
+<div class="form-group">  
+    <%= f.label :price, "Cena:", class: "col-md-4 control-label" %><br>
+    <div class="col-md-8">
+    <%= f.text_field :price, class: "form-control" %>
+    </div>
+</div>
+
+
+<div class="form_row">
+      <label for="type_of_wine">Vrsta vina:</label>
+      <% [ 'Crveno vino', 'Belo vino', 'Ruzicasto vino'].each do |type_of_wine| %>
+      <br><%= f.radio_button :type_of_wine, type_of_wine, :checked => (@type_of_wine == type_of_wine)%>
+          
+      <%= type_of_wine.humanize %>
+    <% end %>
+    <br>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, :rows => 6 %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+ 
+  <%= f.submit "Snimi proizvod", class: "btn btn-default btn-primary" %>
+  
 <% end %>

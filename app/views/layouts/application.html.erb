@@ -19,40 +19,55 @@
 		
 			
 			<!--<%= @page_title %>-->
-
-<span>
-     <% if session[:counter] > 5 %>
-        posetili ste ovu stranicu <%= pluralize(session[:counter], 'puta')  %>
-     <% end %>
-</span> 
-						
 		 
 		</div>
 		</div>
 
-		<div class="navbar navbar-default" id="meni">
-<div class="container-fluid">
+	<div class="navbar navbar-inverted navbar-fixed-top" class="nav-collapse collapse" id="meni">
+	
+		<div class="container-fluid">
 
-<ul class="nav navbar-nav navbar">
+			<ul class="nav navbar-nav navbar" class="nav-collapse collapse" class="nav">
 				<li><a href="<%= store_path %>">Pocetna</a></li>
 				<li><a href="#">Najnoviji proizvodi</a></li>
-				<li><a href="#">Specijalna ponuda</a></li>				
-				<li><a href="#">Moj Profil</a></li>
+				<li><a href="#">Specijalna ponuda</a></li>
+
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Napredna pretraga</a>
+
+				<ul class="dropdown-menu" role="menu">
+				<li class="dropdown-submenu"><a  href="#">Pretraga po vrstama</a>
+				<ul class="dropdown-menu" role="menu">
+		              <li><a href="<%= store_path(:type_of_wine => 'Crveno vino') %>">Crvena vina</a></li>
+		              <li><a href="<%= store_path(:type_of_wine => 'Belo vino') %>">Bela vina</a></li>
+		              <li><a href="<%= store_path(:type_of_wine => 'Ruzicasto vino') %>">Ruzicasta vina</a></li>
+		        </li>
+		        </ul>
+		              <li class="dropdown-submenu"><a  href="#">Pretraga po cenama</a>
+    					<ul class="dropdown-menu">      						
+      						<li><a tabindex="-1" href=" <%= store_path(price: '1') %>">1000 - 2000 din</a></li>
+      						<li><a href=" <%= store_path(price: '2') %>">2000 - 3000 din</a></li>
+      						<li><a href=" <%= store_path(price: '3') %>">3000 - 5000 din</a></li>      
+    					</ul>
+  					  </li>
+  				</ul>		
+
 				<li><a href="#">Kontakt</a></li>
-				<li><a href="<%= admin_path %>">Ulaz</a></li>			
+				<li><a href="#">O nama</a></li>
+				<li><a href="<%= admin_path %>">Ulaz</a></li>	
 			</ul>
-</div>
-</div>
 
-			
+		</div>
+	</div>
 
+
+	
 <div id = "container" id="centriraj_kontejner">
 	<div class="row" id="centriraj_red">
 		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 text-center" id="leva_kolona" >
 
 				<div id="search">
 
-				 <%= form_tag(products_path, :method => "get") do %>
+				 <%= form_tag(store_path, :method => "get") do %>
 
 				<%= text_field_tag :search, params[:search], class: "span2", placeholder: "Pretrazi proizvode" %>
 
@@ -62,7 +77,6 @@
 				</div>
 				<div class="sidebar">
 					<ul>
-						<li><a href="#">Vrste crnih vina</a></li>
 						<li><a href="#">Vrste belih vina</a></li>
 						<li><a href="#">Vrste domacih rakija</a></li>
 						<li><a href="#">Vrste vina od kupine</a></li>
@@ -103,7 +117,7 @@
 					<%= button_to 'Izadji' , logout_path, :method => :delete %>
 					<% else %>
 					<div id="reklama2">
-					<p>Vas sadrzak korpe bla bla bla. Mozete da porucite bla bla bla, itd.</p>
+					<p>Vas sadrzak korpe bla bla bla. Mozete da porucite bla bla bla, itd. Neki tekst reklama. Neki tekst reklama. Neki tekst reklama. Neki tekst reklama. Neki tekst reklama. Neki tekst reklama. Neki tekst reklama.</p>
 					</div>
 					<% end %>
 										
@@ -114,20 +128,11 @@
 
 
 
-				
-
-
-				
-
-
-	
-	
-
 	<div id = "futer">
 		<h6 style="color: white; margin: 0 auto; text-align: right">Powered by bimgate</h6>
-		<div id="gde_strana"><%= debug(params) if Rails.env.development? %></div>
+		
 	</div>
-
+<div id="gde_strana"><%= debug(params) if Rails.env.development? %></div>
 
 </body>
 </html>
