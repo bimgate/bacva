@@ -11,7 +11,7 @@ ActionMailer::Base.smtp_settings = {
   :authentication => 'plain',
   :user_name      => 'bacvashop@gmail.com',
   :password       => 'zicakv12',
-  :domain         => 'heroku.com',
+  :domain         => 'gmail.com',
   :enable_starttls_auto => true
 }
 
