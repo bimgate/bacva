@@ -1,6 +1,6 @@
 class StoreController < ApplicationController
   #helper_method :increment_counter
-  skip_before_filter :authorize
+  #skip_before_filter :authorize
   
   def index
  
