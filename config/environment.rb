@@ -5,13 +5,13 @@ require File.expand_path('../application', __FILE__)
 Rails.application.initialize!
 
 
-ActionMailer::Base.smtp_settings = {
-  :address        => 'smtp.gmail.com',  #'smtp.sendgrid.net',
-  :port           => '587',
-  :authentication => 'plain',
-  :user_name      => 'bacvashop@gmail.com',
-  :password       => 'zicakv12',
-  :domain         => 'gmail.com',
-  :enable_starttls_auto => true
-}
+#ActionMailer::Base.smtp_settings = {
+ # :address        => 'smtp.gmail.com',  #'smtp.sendgrid.net',
+ # :port           => '587',
+ # :authentication => 'plain',
+ # :user_name      => 'bacvashop@gmail.com',
+ # :password       => 'zicakv12',
+ # :domain         => 'gmail.com',
+ # :enable_starttls_auto => true
+#}
 
