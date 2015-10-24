@@ -29,6 +29,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+
     @cart = current_cart
     if @cart.line_items.empty?
       redirect_to store_url, notice: "Vasa porudzbina je prazna"
@@ -48,16 +49,19 @@ class OrdersController < ApplicationController
 
   # POST /orders
   # POST /orders.json
+
+
   def create
+
     @cart = current_cart
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(current_cart)
-    
-
+        
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        Notifier.order_received(@order).deliver
         format.html { redirect_to store_url, notice: 'Uspesno ste porucili nase proizvode.' }
        
         format.json { render :show, status: :created, location: @order }

@@ -33,10 +33,18 @@ class ProductsController < ApplicationController
     @cart = current_cart
     @product = Product.new(product_params)
 
+    @product.picture = params[:picture] # Assign a file like this, or
+
+
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
+
+       # @product.picture.url #('/public/images/file.png')
+        #@product.picture.current_path # => 'path/to/file.png'
+        #@product.picture_identifier # => 'file.png'
+
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -68,10 +76,12 @@ class ProductsController < ApplicationController
     end
   end
 
+
+
   def who_bought #FEEDS ATOM
     @product = Product.find(params[:id])
     respond_to do |format|
-      format.atom
+      #format.atom
       format.xml { render :xml => @product }
     end
   end
@@ -84,6 +94,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price, :type_of_wine)
+      params.require(:product).permit(:title, :description, :image_url, :price, :type_of_wine, :picture)
     end
 end

@@ -13,6 +13,9 @@ def add_line_items_from_cart(cart)
 	end
 end
 
+def total_price
+		line_items.to_a.sum { |item| item.total_price }
+end
 
 
 

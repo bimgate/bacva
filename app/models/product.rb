@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
 
+mount_uploader :picture, PictureUploader						 
+
 	default_scope { order(created_at: :desc) }
 	has_many :line_items
 	has_many :orders, :through => :line_items

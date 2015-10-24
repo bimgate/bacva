@@ -1,0 +1,18 @@
+<h3>Poštovani <%= @order.name %></h3>
+
+<p> Uspešno ste poručili proizvode preko www.bacva.rs.
+Vaša porudžbina sadrži sledeće proizvode:</p>
+<table>
+	<tr>
+	<td><%= render @order.line_items %></td>
+	</tr>
+
+	<tr>
+	<td>Ukupan iznos:</td>
+	<td><%= @order.total_price %></td> 
+	</tr>
+
+</table>
+
+<p> Naknadno ćete biti obavešteni putem email-a o isporuci porudžbine.</p>
+
