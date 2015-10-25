@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+  get 'static_pages/contact'
+
+  get 'static_pages/about'
+
   get 'admin' => 'admin#index'
 
   #get 'sessions/new'
   #get 'sessions/create'
   #get 'sessions/destroy'
+
+match '/contacts',     to: 'contacts#new',             via: 'get'
+resources "contacts", only: [:new, :create]
+
+
 
   resources :users
   resources :orders
@@ -18,6 +27,8 @@ Rails.application.routes.draw do
   get :who_bought, :on => :member
   end
   
+  #resources :contact_forms
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
