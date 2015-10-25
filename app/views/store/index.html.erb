@@ -16,7 +16,7 @@
     <%= image_tag(product.image_url, class: "img-responsive", class: "img-rounded") %>
     
     <h3><%= product.title %></h3>   
-    <p class="lead"><%=sanitize product.description %></p>
+    <p class="lead"><%=truncate(strip_tags(product.description), :length => 80) %></p>
     
     <span class="price"><%= sprintf("din% 0.02f", product.price) %></span>
       <!--<span class="price"><%= number_to_currency(product.price) %></span>-->
