@@ -1,6 +1,11 @@
-<h1>Editing Product</h1>
+<h1>Izmeni proizvod</h1>
+<div>
+<ul class="list-inline">
+<li><%= link_to 'Nazad', products_path, :class=>"btn btn-default" %></li>
+</ul>
+<h3><%= @product.title%></h3>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+

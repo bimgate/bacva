@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
     if @contact.deliver
       flash.now[:notice] = 'Hvala vam na poruci, uskoro cemo vas kontaktirati!'
     else
-      flash.now[:error] = 'Cannot send message.'
+      flash.now[:error] = 'Trenutno nije moguce poslati poruku.'
       render :new
     end
   end

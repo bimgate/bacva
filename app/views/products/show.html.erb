@@ -1,31 +1,35 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag @product.picture.url if @product.picture %>
-</p>
+<% if notice %>
+<div class="alert alert-info">
+<p id="notice" style="color: black"><%= notice %></p>
+</div>
+<% end %>
 
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class="page-header">
+<ul class="list-inline">
+<li><%= link_to 'Prikaži', edit_product_path(@product), :class=>"btn btn-warning" %></li>
+<li><%= link_to 'Nazad', products_path, :class=>"btn btn-default" %>
+</li>
+</ul>
+<h3><%= @product.title%></h3>
+</div>
 
+
+<table class="table table-bordered">
+<tr>
+<td>Naziv:</td>
+<td><%= @product.title %></td>
+</tr>
+<tr>
+<td>Slika:</td>
+<td><img class="img-responsive" src=<%= @product.picture.url if @product.picture %> /></td>
+</tr>
+<tr>
+<td>Opis:</td>
+<td><p><%= @product.description %></p></td>
+</tr>
+<tr class="success" >
+<td style="color: black; border: solid 2px black">Cena:</td>
+<td style="color: black; border: solid 2px black"><%= @product.price %> RSD</td>
+</tr>
+</table>

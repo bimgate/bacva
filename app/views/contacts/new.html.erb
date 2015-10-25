@@ -1,16 +1,39 @@
+<% if notice %>
+<p id ="notice"><%= notice %></p>
+<% end %>
+
 <div align="center">
-  <h3>Send A message to Us</h3>
+  <h3>Kontaktirajte nas</h3>
 
   <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, :required => true %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :message, :as => :text, :required => true %>
-    <div class= "hidden">
-      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-    </div>
+
+
+    <div class="form-group">
+        <%= f.label :name, "Ime:", class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.text_field :name, :required => true, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email, "Email:", class: "col-md-4 control-label" %>
+        <div class="col-md-5">
+          <%= f.text_field :email, :required => true, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :message, "Poruka:", class: "col-md-4 control-label" %>
+        <div class="col-md-6">
+          <%= f.text_area :message, :as => :text, :required => true, class: "form-control" %>
+        </div>
+      </div>
+    
     <div>
       </br>
-      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+      <%= f.button :submit, 'Pošalji poruku', :class=> "btn btn-primary" %>
     </div>
   <% end %>
 </div>
+
+
