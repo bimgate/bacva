@@ -19,6 +19,7 @@ resources "contacts", only: [:new, :create]
   resources :line_items
   resources :carts
   get 'store/index'
+  get 'store/show'
 
   resources :products
   resources :products

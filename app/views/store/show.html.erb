@@ -1,0 +1,28 @@
+
+<div class="page-header">
+<ul class="list-inline">
+<li><%= button_to 'Dodaj u korpu', line_items_path(:product_id => @product), class: "btn btn-primary btn-sm", method: 'post', :remote => true %></li>
+<li><%= link_to 'Nazad', store_path, :class=>"btn btn-default" %></li>
+</ul>
+<h3><%= @product.title%></h3>
+</div>
+
+
+<table class="table table-bordered">
+<tr>
+<td>Naziv:</td>
+<td><%= @product.title %></td>
+</tr>
+<tr>
+<td>Slika:</td>
+<td><img class="img-responsive" src=<%= @product.picture.url if @product.picture %> /></td>
+</tr>
+<tr>
+<td>Opis:</td>
+<td><p><%= @product.description %></p></td>
+</tr>
+<tr class="success" >
+<td style="color: black; border: solid 2px black">Cena:</td>
+<td style="color: black; border: solid 2px black"><%= @product.price %> RSD</td>
+</tr>
+</table>

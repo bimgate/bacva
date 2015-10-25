@@ -4,7 +4,7 @@ class StoreController < ApplicationController
   
   def index
  
-
+ 
  if params[:type_of_wine]
 @products = Product.paginate(page: params[:page],per_page: 4).where("type_of_wine LIKE ? ", "%#{params[:type_of_wine]}%")
      elsif params[:search]
@@ -27,6 +27,12 @@ class StoreController < ApplicationController
   	increment_counter
   	@cart = current_cart
   end
+
+def show
+@cart = current_cart
+@product = Product.find(params[:product_id])
+end
+
 
  def increment_counter
   if session[:counter].nil?
