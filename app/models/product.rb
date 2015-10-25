@@ -14,7 +14,7 @@ mount_uploader :picture, PictureUploader
     #:message => 'must be a URL for GIF, JPG or PNG image.'
 	#}
 
-before_destroy :ensure_not_referenced_by_any_line_item
+#before_destroy :ensure_not_referenced_by_any_line_item
 
 def ensure_not_referenced_by_any_line_item
 
