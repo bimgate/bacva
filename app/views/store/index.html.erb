@@ -3,24 +3,20 @@
 <% end %>
 
 
+<div class="row">
 
-
-
-<div class="row" id="store_margin_test">
-
-<div class="col-xs-12 col-sm-6 col-md-4 col-lg-12" id="store_margin_test1">
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-12 text-center">
 <h1>Katalog ponude</h1>
 <% @products.each do |product| %>
 
 <div class="col-lg-6">
-<%= link_to image_tag(product.image_url, class: "img-rounded"), store_show_path(:product_id => product) %>   
+    <%= image_tag(product.image_url, class: "img-responsive", class: "img-rounded") %>
     
     <h3><%= product.title %></h3>   
-    <p id="opis_proizvoda"><%=truncate(strip_tags(product.description), :length => 80) %></p>
+    <p class="lead"><%=truncate(strip_tags(product.description), :length => 80) %></p>
     
     <span class="price"><%= sprintf("din% 0.02f", product.price) %></span>
       <!--<span class="price"><%= number_to_currency(product.price) %></span>-->
-
       <%= button_to 'Dodaj u korpu', line_items_path(:product_id => product), class: "btn btn-primary btn-sm", method: 'post', :remote => true %> <!-- AJAX POZIV-->   <br/>
    </div>      
   <% end %>
