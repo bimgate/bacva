@@ -1,14 +1,15 @@
 <div id="product_list" >
 
+  <h1>Listing proizvoda</h1>
 
-  <h1>Listing products</h1>
+<%= link_to 'Unesi novi proizvod', new_product_path, :class=>"btn btn-primary" %>
 
-<table>
+<table id="prikaz_proizvoda">
     <% @products.each do |product| %>
   
     <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >
       <td>
-      <%= image_tag(product.image_url, :class => 'list_image' ) %>
+      <img class="img-responsive" src=<%= product.picture.url if product.picture %> />
       </td>
   
       <td class="list_description" >
@@ -19,17 +20,14 @@
       </td>
 
       <td class="list_actions" >
-      <%= link_to 'Show' , product %><br/>
-      <%= link_to 'Edit' , edit_product_path(product) %><br/>
-      <%= link_to 'Destroy' , product, :confirm => 'Are you sure?' , :method => :delete %>
-
+      <%= link_to 'Prikaži', edit_product_path(product), :class=>"btn btn-warning" %>
+      
       </td>
     </tr>
   <% end %>
 </table>
 </div>
-<br />
-<%= link_to 'New product' , new_product_path %>
+
 
 
 
