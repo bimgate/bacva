@@ -8,13 +8,12 @@
 
 <div class="row">
 
-<div class="col-xs-12 col-sm-6 col-md-4 col-lg-12 text-center">
+<div class="col-md-4 col-lg-12 text-center">
 <h1>Katalog ponude</h1>
 <% @products.each do |product| %>
 
 <div class="col-lg-6">
-<%= link_to image_tag(product.image_url), store_show_path(:product_id => product) %>
-   
+<%= link_to image_tag(product.image_url), store_show_path(:product_id => product) %>   
     
     <h3><%= product.title %></h3>   
     <p id="opis_proizvoda"><%=truncate(strip_tags(product.description), :length => 80) %></p>
