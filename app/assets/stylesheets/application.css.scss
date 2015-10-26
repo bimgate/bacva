@@ -50,10 +50,13 @@
  .jumbotron {
  margin: 0 auto;
  margin-bottom: 0px;
- margin-top: 0px;
- width: 960px;
- height: 580px;
- background: url('/images/vinograd7.JPG');
+ margin-top: 50px;
+ margin-right: 100px;
+ margin-left: -30px;
+ width: 1215px;
+ height: 280px;
+ background: url('/images/jumbo.jpg');
+ border-radius: 6px;
  }
 
  body{
@@ -213,4 +216,12 @@ legend{
 
 .table {
     color: white;
+}
+
+.sidebar{
+    height: 1000px;
+    width: 250px;
+    margin-bottom: 10px;
+    padding-top: 50px;
+    padding-left: 50px;
 }
