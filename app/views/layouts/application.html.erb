@@ -27,7 +27,7 @@
 	
 		<div class="container-fluid">
 		<a href="<%= store_path %>" class="navbar-brand">OnlineBacvaShop</a>
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav" id="menu-left">
 				
 				<li><a href="<%= store_path %>">Pocetna</a></li>
 				
@@ -111,8 +111,14 @@
 					<% else %>
 					<div id="reklama2">
 					<p>Vas sadrzak korpe bla bla bla. Mozete da porucite bla bla bla, itd. Neki tekst reklama. Neki tekst reklama. Neki tekst reklama. Neki tekst reklama. Neki tekst reklama. Neki tekst reklama. Neki tekst reklama.</p>
+
+
 					</div>
 					<% end %>
+
+					<div id="bure">
+					<img src="images/bure.png">
+					</div>
 										
 					</div>
 				</div>
@@ -120,13 +126,8 @@
 </div>
 
 
-
-	<div id = "futer">
-		<h6 style="color: white; margin: 0 auto; text-align: right">Powered by bimgate</h6>
-		
-	</div>
-<div id="gde_strana"><%= debug(params) if Rails.env.development? %></div>
-
+<div class="navbar navbar-bottom" id="footer"><h3 >Bimgate C 2015</h3></div>
+	
 
 </body>
 </html>

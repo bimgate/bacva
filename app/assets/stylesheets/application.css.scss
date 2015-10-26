@@ -27,7 +27,8 @@
 
 	background-color: #030000;
     padding: 0;
-    padding-bottom: 140px;	
+    padding-bottom: 70px;
+
 }
 
 #desna_kolona{
@@ -64,21 +65,29 @@
  @include filter-gradient(#f0b7a1, #bf6e4e, horizontal); // IE6-9
 @include background-image(linear-gradient(left,  #f0b7a1 0%,#60150b 34%,#752201 49%,#bf6e4e 100%));
 
-
  }
 
  #meni{
  margin-bottom: 0px;
  background-color: #5E0E03;
- border-color: #5E0E03;
- 
+ border-color: #5E0E03; 
  }
 
  #meni a {
- text-shadow: 0px 0 15px white;
-	
+ text-shadow: 0px 0 15px white;	
 	font-weight: bold;
  }
+
+#menu-left{
+    margin-left: 650px;
+    
+}
+
+#menu-left a{
+    font-size: 14px;
+    font-weight: bold;
+}
+
 
  #cart_line_item_total_price{
 	font-size: 18px;
@@ -224,4 +233,11 @@ legend{
     margin-bottom: 10px;
     padding-top: 50px;
     padding-left: 50px;
+}
+
+#footer{
+    width: 100%;
+    background-color: black;
+    margin-bottom: 0;
+    margin-top: 70px;
 }
