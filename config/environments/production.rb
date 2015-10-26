@@ -14,6 +14,43 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+config.serve_static_assets = true
+
+config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif,
+                                  "fontawesome-webfont.ttf",
+                                 "fontawesome-webfont.eot",
+                                 "fontawesome-webfont.svg",
+                                 "fontawesome-webfont.woff")
+
+
+
+config.assets.precompile << Proc.new do |path|
+      if path =~ /\.(css|js)\z/
+        full_path = Rails.application.assets.resolve(path).to_path
+        app_assets_path = Rails.root.join('app', 'assets').to_path
+        if full_path.starts_with? app_assets_path
+          puts "including asset: " + full_path
+          true
+        else
+          puts "excluding asset: " + full_path
+          false
+        end
+      else
+        false
+      end
+    end
+
+
+
+
+
+
+
+
+
+
+
+
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like
