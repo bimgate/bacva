@@ -18,7 +18,14 @@
   
     
     <h3><%= product.title %></h3>   
+
+    
+
+    <%= link_to (store_show_path(:product_id => product)) do %>
     <p id="opis_proizvoda"><%=truncate(strip_tags(product.description), :length => 80) %></p>
+    <% end  %>
+
+    
     
     <span class="price"><%= sprintf("din% 0.02f", product.price) %></span>
       <!--<span class="price"><%= number_to_currency(product.price) %></span>-->
