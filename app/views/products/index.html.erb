@@ -4,7 +4,7 @@
 
 <%= link_to 'Unesi novi proizvod', new_product_path, :class=>"btn btn-primary" %>
 
-<table id="prikaz_proizvoda">
+<table id="prikaz_proizvoda" style="color:white">
     <% @products.each do |product| %>
   
     <tr class=" <%= cycle('list_line_odd' , 'list_line_even' ) %>" >

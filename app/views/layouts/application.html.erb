@@ -111,14 +111,16 @@ collapse" data-target="#collapibleMenu">
 					
 					<% if session[:user_id] %>
 					<br />
-					<%= link_to 'Porudzbine' , orders_path %><br />
-					<%= link_to 'Proizvodi' , products_path %><br />
-					<%= link_to 'Korisnici' , users_path %><br />
+					<%= link_to 'Porudzbine' , orders_path, :class=>"btn btn-primary" %><br />
 					<br />
-					<%= button_to 'Izadji' , logout_path, :method => :delete %>
+					<%= link_to 'Proizvodi' , products_path, :class=>"btn btn-primary" %><br />
+					<br />
+					<%= link_to 'Korisnici' , users_path, :class=>"btn btn-primary" %><br />
+					<br />
+					<%= button_to 'Izadji' , logout_path, :class=>"btn btn-warning", :method => :delete %>
 					<% else %>
 					<div id="reklama2">
-					<p style="font-style:italic; font-size:18px; color:green">Vas sadrzak korpe u svakom trenutku možete izmeniti dodavanjem novih proizvoda ili brisanjem već dodatih. Proizvodi se isporučuju na vašu adresu uslugom brze pošte u originalnoj ambalaži.</p>
+					<p style="font-style:italic; font-size:18px; color:green">Vaš sadržaj korpe u svakom trenutku možete izmeniti dodavanjem novih proizvoda ili brisanjem već dodatih. Proizvodi se isporučuju na vašu adresu uslugom brze pošte u originalnoj ambalaži.</p>
 
 
 					</div>
@@ -134,7 +136,7 @@ collapse" data-target="#collapibleMenu">
 </div>
 
 
-<div class="navbar navbar-bottom" id="footer"><h3>Povered by bimgate 2015</h3></div>
+<div class="navbar navbar-bottom" id="footer"><h4 style="margin-left:1200px; color:white">Bratislav Miletic 2015.</h4></div>
 	
 
 </body>
